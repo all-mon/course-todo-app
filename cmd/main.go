@@ -14,6 +14,7 @@ import (
 
 func main() {
 	logrus.SetFormatter(new(logrus.JSONFormatter))
+
 	if err := initConfig(); err != nil {
 		logrus.Fatalf("error initializing configs: %s", err.Error())
 	}
@@ -44,6 +45,7 @@ func main() {
 	}
 }
 
+//считываем config.yml при помощи библиотеки viper
 func initConfig() error {
 	viper.AddConfigPath("configs")
 	viper.SetConfigName("config")

@@ -8,6 +8,7 @@ import (
 //интерфейсы сущностей, название - участок бизнес логики , за который они отвечают
 type Authorization interface {
 	CreateUser(user todo.User) (int, error)
+	GenerateToken(username, password string) (string, error)
 }
 
 type TodoList interface {
